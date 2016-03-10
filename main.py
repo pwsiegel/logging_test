@@ -6,7 +6,7 @@ from log_timer import log_timer
 
 #Set up the logger with an S3 handler
 logger = logging.getLogger("test_logger")
-handler = S3Handler("bwnetwork", "log.txt")
+handler = S3Handler("my_bucket", "log.txt")
 formatter = logging.Formatter("%(asctime)s %(levelname)s: %(message)s", "%Y-%m-%d %H:%M:%S")
 handler.setFormatter(formatter)
 logger.addHandler(handler)
@@ -25,6 +25,7 @@ if __name__ == '__main__':
 	logger.info("first division problem")
 	print(divide(5,2))
 	
+	#Use a decorator to 
 	@log_timer(logger)
 	def long_task():
 		num = 0

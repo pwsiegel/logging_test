@@ -25,7 +25,7 @@ if __name__ == '__main__':
 	logger.info("first division problem")
 	print(divide(5,2))
 	
-	#Use a decorator to 
+	#Use a decorator to log how long a task took
 	@log_timer(logger)
 	def long_task():
 		num = 0

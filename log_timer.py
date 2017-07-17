@@ -1,10 +1,10 @@
-from datetime import datetime
+from time import perf_counter
 
 def log_timer(logger):
 	def outer(inner):
-		start = datetime.now()
+		start = perf_counter()
 		inner()
-		end = datetime.now()
+		end = perf_counter()
 		logger.info(inner.__name__ + " ran in " + str((end - start).total_seconds()) + " seconds")
 
 	return outer
